@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es-en">
 
 <head>
 
@@ -9,19 +9,22 @@
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Crear Clases</title>
+    <title>Admin-Crear Curso</title>
+
+    <link rel="icon" href="img/a.jpeg">
 
     <!-- Custom fonts for this template -->
     <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-    <link
-        href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template -->
     <link href="css/sb-admin-2.min.css" rel="stylesheet">
 
     <!-- Custom styles for this page -->
     <link href="vendor/datatables/dataTables.bootstrap4.min.css" rel="stylesheet">
+
+
+    <link rel='stylesheet' href='https://cdn-uicons.flaticon.com/uicons-regular-rounded/css/uicons-regular-rounded.css'>
 
 </head>
 
@@ -34,51 +37,91 @@
         <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
 
             <!-- Sidebar - Brand -->
-            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="index.html">
+            <a class="sidebar-brand d-flex align-items-center justify-content-center" href="loginvista.html">
                 <div class="sidebar-brand-icon rotate-n-15">
+                    <i class="fas fa-laugh-wink"></i>
                 </div>
-                <div class="sidebar-brand-text mx-3" id="BienvenidaUsuario">TABLAS</div>
+                <div class="sidebar-brand-text mx-3" id="BienvenidaUsuario">SB Admin </div>
             </a>
 
             <!-- Divider -->
             <hr class="sidebar-divider my-0">
 
-            <!-- Nav Item - Dashboard -->
-            <li class="nav-item">
-                <a class="nav-link" href="#">
-                    <i class="fas fa-fw fa-tachometer-alt"></i>
-                    <span>Panel de control</span></a>
-            </li>
+            <<li class="nav-item">
+                <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                    <i class="fas fa-fw fa-wrench"></i>
+                    <span>Cursos</span>
+                </a>
+                <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                    <div class="bg-white py-2 collapse-inner rounded">
+                        <h6 class="collapse-header">Training Platform</h6>
+                        <a class="collapse-item" href="tableCrearCurso.html ">Crear Curso</a>
+                        <a class="collapse-item" href="verCursos.html">Ver Cursos</a>
 
 
-
-            <!-- Heading -->
-            <div class="sidebar-heading">
-                Agregar
-            </div>
-
-            <!-- Nav Item - Pages Collapse Menu -->
-            
-            <!-- Nav Item - Tables -->
-            
-            <li class="nav-item active">
-                <a class="nav-link" href="tables.html">
+                    </div>
+                </div>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link collapsed" href="#" data-toggle="collapse" data-target="#collapseUtilities" aria-expanded="true" aria-controls="collapseUtilities">
+                        <i class="fas fa-fw fa-wrench"></i>
+                        <span>Cursos</span>
+                    </a>
+                    <div id="collapseUtilities" class="collapse" aria-labelledby="headingUtilities" data-parent="#accordionSidebar">
+                        <div class="bg-white py-2 collapse-inner rounded">
+                            <h6 class="collapse-header">Training Platform</h6>
+                            <a class="collapse-item" href="tableMatematica.html">Matematica</a>
+                            <a class="collapse-item" href="tableIngles.html">Ingles</a>
+                            <a class="collapse-item" href="tableComunicacion.html">Comunicacion</a>
+                            <a class="collapse-item" href="tableArte.html">Arte</a>
+                            <a class="collapse-item" href="tableCalculo.html">Calculo</a>
+                        </div>
+                    </div>
+                </li>
+                <!-- Nav Item - Tables -->
+                <!-- <li class="nav-item active">
+                <a class="nav-link" href="tableArte.html">
                     <i class="fas fa-fw fa-table"></i>
-                    <span>Crear Contenido</span></a>
+                    <span>Clase Arte</span></a>
             </li>
+
+
             <li class="nav-item active">
+                <a class="nav-link" href="tableMatematica.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Clase Matemática</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="tableComunicacion.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Clase Comunicacion</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="tableIngles.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Clase Ingles</span></a>
+            </li>
+
+            <li class="nav-item active">
+                <a class="nav-link" href="tableCalculo.html">
+                    <i class="fas fa-fw fa-table"></i>
+                    <span>Clase Calculo</span></a> -->
+                <!-- <li class="nav-item active">
                 <a class="nav-link" href="CreacionClase.html">
                     <i class="fas fa-fw fa-table"></i>
                     <span>Crear Clase</span></a>
-            </li>
+            </li> -->
 
-            <!-- Divider -->
-            <hr class="sidebar-divider d-none d-md-block">
 
-            <!-- Sidebar Toggler (Sidebar) -->
-            <div class="text-center d-none d-md-inline">
-                <button class="rounded-circle border-0" id="sidebarToggle"></button>
-            </div>
+                <!-- Divider -->
+                <hr class="sidebar-divider d-none d-md-block">
+
+                <!-- Sidebar Toggler (Sidebar) -->
+                <div class="text-center d-none d-md-inline">
+                    <button class="rounded-circle border-0" id="sidebarToggle"></button>
+                </div>
 
         </ul>
         <!-- End of Sidebar -->
@@ -109,13 +152,10 @@
                         <li class="nav-item dropdown no-arrow d-sm-none">
 
                             <!-- Dropdown - Messages -->
-                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in"
-                                aria-labelledby="searchDropdown">
+                            <div class="dropdown-menu dropdown-menu-right p-3 shadow animated--grow-in" aria-labelledby="searchDropdown">
                                 <form class="form-inline mr-auto w-100 navbar-search">
                                     <div class="input-group">
-                                        <input type="text" class="form-control bg-light border-0 small"
-                                            placeholder="Search for..." aria-label="Searchsss"
-                                            aria-describedby="basic-addon2">
+                                        <input type="text" class="form-control bg-light border-0 small" placeholder="Search for..." aria-label="Searchsss" aria-describedby="basic-addon2">
                                         <div class="input-group-append">
                                             <button class="btn btn-primary" type="button">
                                                 <i class="fas fa-search fa-sm"></i>
@@ -128,10 +168,9 @@
 
                         <!-- Nav Item - Alerts -->
                         <li class="nav-item dropdown no-arrow mx-1">
-                            <a class="nav-link dropdown-toggle" href="#" id="alertsDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            <a class="nav-link dropdown-toggle" href="indexxx.html" id="alertsDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 <!-- Counter - Alerts -->
-                                <h6>Ir a pagina principal KHENDRA</h6>
+                                <h4>Scarlet Codex</h4>
                             </a>
                             <!-- Dropdown - Alerts -->
 
@@ -144,12 +183,10 @@
 
                         <!-- Nav Item - User Information -->
                         <li class="nav-item dropdown no-arrow">
-                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button"
-                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="mr-2 d-none d-lg-inline text-gray-600 small"
-                                    id="BienvenidaUsuario2"></span>
+                            <a class="nav-link dropdown-toggle" href="#" id="userDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                <span class="mr-2 d-none d-lg-inline text-gray-600 small" id="BienvenidaUsuario2"></span>
 
-                                <img class="img-profile rounded-circle" src="/assets/img/logo.jpeg">
+                                <img class="img-profile rounded-circle" src="img/paisaje-colorido.jpg">
                             </a>
                             <!-- Dropdown - User Information -->
 
@@ -164,48 +201,39 @@
                 <div class="container-fluid">
 
                     <!-- Page Heading -->
-                    <h1 class="h3 mb-2 text-gray-800">Crear Clase</h1>
+                    <h1 class="h3 mb-2 text-gray-800">Registrar curso</h1>
 
                     <div id="TablaActualizar">
                         <p>
-                            <a class="btn btn-primary" id="BTNletra" data-toggle="collapse" href="#collapseExample"
-                                aria-expanded="" aria-controls="">
-                                Crear <i ></i>
+                            <a class="btn btn-primary" id="BTNletra" data-toggle="collapse" href="#collapseExample" aria-expanded="" aria-controls="">
+                                Crear curso <sub><i class="fi-rr-notebook"></i></sub>
                             </a>
                         </p>
                         <div class="collapse" id="collapseExample">
                             <div class="card card-body">
                                 <form id="formTask">
-                                    
-                                        
-                                    <h4>Clase</h4>
-                                    
-                                        <div class="form-group col-md-10">
-                                            <input type="text" id="id_clase" placeholder="ID de la clase"
-                                                class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-10">
-                                            <input type="text" id="id_clase_modulo" placeholder="ID modulo"
-                                                class="form-control">
-                                        </div>
-                                        <div class="form-group col-md-10">
-                                            <input type="text" id="nombre_clase" placeholder="Nombre de la clase"
-                                                class="form-control">
-                                        </div>
 
-                                        <div class="form-group col-md-10">
-                                            <input type="url" id="Url_clase" placeholder="Url del video"
-                                                class="form-control">
-                                        </div>
-                                        
-                                    
+
+                                    <h4>Curso</h4>
+
+
                                     <div class="form-group col-md-10">
-                                        <textarea id="desc_clase" cols="30" rows="5" class="form-control"
-                                            placeholder="Info de la clase"></textarea>
+                                        <input type="text" id="nombre_curso" placeholder="Nombre del curso" class="form-control" required>
                                     </div>
-                                    
-                                    <button type="submit"
-                                        class="btn btn-primary btn-block  hidden-sm-down col-md-3 ">Guardar</button>
+                                    <div class="form-group col-md-10">
+                                        <input type="text" id="profesor" placeholder="Profesor" class="form-control" required>
+                                    </div>
+                                    <div class="form-group col-md-10">
+                                        <input type="url" id="Url_imagen" placeholder="Url Imagen" class="form-control" required>
+                                    </div>
+                                    <!-- 
+                                        pattern="^.{1,120}$"=> Valida de que el texarea solo se pueda escribir de 1 caracter a 120 caracteres -->
+
+                                    <div class="form-group col-md-10">
+                                        <textarea id="desc_clase" cols="30" rows="5" class="form-control" placeholder="Info del curso" required></textarea>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary btn-block  hidden-sm-down col-md-3 ">Guardar</button>
                                 </form>
                             </div>
                         </div>
@@ -220,16 +248,18 @@
                                 <table class="table table-bordered" id="dataTable" width="100%" cellspacing="2">
                                     <thead>
                                         <tr>
-                                            <th>Id clase</th>
-                                            <th>Id clase del modulo</th>
-                                            <th>Nombre clase</th>
-                                            <th>Url de la clase</th>
-                                            <th>Descripción del contenido de la clase</th>
+
+
+                                            <th>Nombre curso</th>
+                                            <th>Profesor</th>
+                                            <th>Url imagen</th>
+                                            <th>Descripción del contenido del curso</th>
                                             <th>Acciones</th>
+
                                         </tr>
                                     </thead>
 
-                                    <tbody id="tasks">
+                                    <tbody id="curs">
 
 
                                     </tbody>
@@ -267,8 +297,7 @@
     </a>
 
     <!-- Logout Modal-->
-    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
-        aria-hidden="true">
+    <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -302,7 +331,7 @@
 
     <!-- Page level custom scripts -->
     <script src="js/demo/datatables-demo.js"></script>
-    <script src="js/appC.js"></script>
+    <script src="js/crearcurso.js"></script>
 </body>
 
 </html>

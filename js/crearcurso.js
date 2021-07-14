@@ -1,11 +1,11 @@
 //llamo a la variable de session
-let data = sessionStorage.getItem('NomUsuario');
+// let data = sessionStorage.getItem('NomUsuario');
 
 
-let usuario2 = document.getElementById("BienvenidaUsuario2");
+// let usuario2 = document.getElementById("BienvenidaUsuario2");
 
 // usuario.textContent = "Bienvenido " + data;
-usuario2.textContent = "Bienvenido " + data;
+// usuario2.textContent = "Bienvenido " + data;
 
 
 
@@ -16,70 +16,70 @@ document.getElementById('formTask').addEventListener('submit', saveTask); // eje
 function saveTask(e) {
 
     e.preventDefault();
-    let NombreClase = document.getElementById("nombre_clase").value;
+    let NombreCurso = document.getElementById("nombre_curso").value;
+    let PROFESOR = document.getElementById("profesor").value;
     let URLI = document.getElementById("Url_imagen").value;
-    let URL = document.getElementById("Url_clase").value;
     let DescripcionClase = document.getElementById("desc_clase").value;
 
     // guardando en un objeto
     let task = {
-        NombreClase,
+        NombreCurso,
+        PROFESOR,
         URLI,
-        URL,
         DescripcionClase
 
     };
 
-    if (localStorage.getItem('tasks') === null) { // API
-        let tasks = [];
-        tasks.push(task); //stringify paso un objeto a un objeto seteable string
-        localStorage.setItem('tasks', JSON.stringify(tasks)); // primero nombre del  guardado  y luego  lo  q vas a guardar, se recomienda guardarlo  a string
+    if (localStorage.getItem('curs') === null) { // API
+        let curs = [];
+        curs.push(task); //stringify paso un objeto a un objeto seteable string
+        localStorage.setItem('curs', JSON.stringify(curs)); // primero nombre del  guardado  y luego  lo  q vas a guardar, se recomienda guardarlo  a string
     } else {
-        let tasks = JSON.parse(localStorage.getItem('tasks')); //recibo el string y lo paso  a objeto
-        tasks.push(task);
-        localStorage.setItem('tasks', JSON.stringify(tasks));
+        let curs = JSON.parse(localStorage.getItem('curs')); //recibo el string y lo paso  a objeto
+        curs.push(task);
+        localStorage.setItem('curs', JSON.stringify(curs));
     }
 
-    getTasks(); //  cada vez que guardo llamo a abtener tareas
+    getcurs(); //  cada vez que guardo llamo a abtener tareas
     document.getElementById('formTask').reset();
 
 }
 
 function deleteTask(title) {
 
-    let tasks = JSON.parse(localStorage.getItem('tasks'));
-    for (let i = 0; i < tasks.length; i++) {
-        if (tasks[i].NombreClase == title) {
-            tasks.splice(i, 1);
+    let curs = JSON.parse(localStorage.getItem('curs'));
+    for (let i = 0; i < curs.length; i++) {
+        if (curs[i].NombreCurso == title) {
+            curs.splice(i, 1);
         }
     }
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
-    getTasks();
+    localStorage.setItem('curs', JSON.stringify(curs));
+    getcurs();
 }
 
-function getTasks() {
-    let tasks = JSON.parse(localStorage.getItem('tasks')); // obteniendo las tareas del localstorage
-    let tasksView = document.getElementById('tasks');
-    tasksView.innerHTML = '';
-    for (let i = 0; i < tasks.length; i++) {
+function getcurs() {
+    let curs = JSON.parse(localStorage.getItem('curs')); // obteniendo las tareas del localstorage
+    let cursView = document.getElementById('curs');
+    cursView.innerHTML = '';
+    for (let i = 0; i < curs.length; i++) {
         //   let title              = tasks[i].NombreCurso;
         //   let NombreDocente      = tasks[i].NombreDocente;
         //   let DescripcionCurso   = tasks[i].DescripcionCurso;
 
-        let title = tasks[i].NombreClase;
-        let URLI = tasks[i].URLI;
-        let URL = tasks[i].URL;
-        let DescripcionClase = tasks[i].DescripcionClase;
+        let title = curs[i].NombreCurso;
+        let PROFESOR = curs[i].PROFESOR;
+        let ULRI = curs[i].URLI;
+        let DescripcionClase = curs[i].DescripcionClase;
 
         //     <td>${title}</td>
         //    <td>${NombreDocente}</td>
         //    <td>${DescripcionCurso}</td>
-        tasksView.innerHTML += `<tr>
+        cursView.innerHTML += `<tr>
                            
                             <td>${title}</td>
-                           <td>${URLI}</td>
-                           <td>${URL}</td>
+                           <td>${PROFESOR}</td>
+                           <td>${ULRI}</td>
                            <td>${DescripcionClase}</td>
                            
                            <td>
@@ -102,16 +102,16 @@ function getTasks() {
 //    <div class="form-group">
 //           <textarea id="DescripcionCursoActualizar" cols="30" rows="10" class="form-control" placeholder="${tasks[index].DescripcionCurso}"></textarea>
 
-getTasks();
+getcurs();
 
 function editar(titulo) {
     console.log(titulo);
 
-    let tasks = JSON.parse(localStorage.getItem('tasks'));
+    let curs = JSON.parse(localStorage.getItem('curs'));
 
-    for (let index = 0; index < tasks.length; index++) {
+    for (let index = 0; index < curs.length; index++) {
 
-        if (tasks[index].NombreClase == titulo) {
+        if (curs[index].NombreCurso == titulo) {
 
             document.getElementById("TablaActualizar").innerHTML = `
                 <p> 
@@ -126,17 +126,17 @@ function editar(titulo) {
                              </div>
                              
                                <div class="form-group">
-                                       <input type="text" id="NombreClaseActualizar" placeholder="${tasks[index].NombreClase}" class="form-control">
+                                       <input type="text" id="NombreClaseActualizar" placeholder="${curs[index].NombreCurso}" class="form-control">
                                </div>
                                <div class="form-group">
-                                       <input type="url" id="URLIActualizar" placeholder="${tasks[index].URLI}" class="form-control">
+                                       <input type="url" id="URLIActualizar" placeholder="${curs[index].PROFESOR}" class="form-control">
                                </div>
                                <div class="form-group">
-                                       <input type="url" id="URLActualizar" placeholder="${tasks[index].URL}" class="form-control">
+                                       <input type="url" id="URLActualizar" placeholder="${curs[index].URL}" class="form-control">
                                </div>
 
                                <div class="form-group">
-                                      <textarea id="DescripcionClaseActualizar" cols="30" rows="10" class="form-control" placeholder="${tasks[index].DescripcionClase}"></textarea>
+                                      <textarea id="DescripcionClaseActualizar" cols="30" rows="10" class="form-control" placeholder="${curs[index].DescripcionClase}"></textarea>
                              </div>
 
                                       <button type="submit" class="btn btn-primary btn-block" onclick="actualizar('${index}')">Actualizar</button>
@@ -152,19 +152,18 @@ function editar(titulo) {
 function actualizar(i) {
     console.log(i);
 
-    let tasks = JSON.parse(localStorage.getItem('tasks'));
-
+    let curs = JSON.parse(localStorage.getItem('curs'));
     //  tasks[i].NombreCurso = document.getElementById("NombreCursoActualizar").value;
     //  tasks[i].NombreDocente = document.getElementById("NombreCursoActualizar").value;
     //  tasks[i].DescripcionCurso = document.getElementById("DescripcionCursoActualizar").value;
 
-    tasks[i].NombreClase = document.getElementById("NombreClaseActualizar").value;
-    tasks[i].URLI = document.getElementById("URLIActualizar").value;
-    tasks[i].URL = document.getElementById("URLActualizar").value;
-    tasks[i].DescripcionClase = document.getElementById("DescripcionClaseActualizar").value;
+    curs[i].NombreClase = document.getElementById("NombreClaseActualizar").value;
+    curs[i].PROFESOR = document.getElementById("PROFESORActualizar").value;
+    curs[i].URLI = document.getElementById("URLIActualizar").value;
+    curs[i].DescripcionClase = document.getElementById("DescripcionClaseActualizar").value;
 
-    localStorage.setItem('tasks', JSON.stringify(tasks));
+    localStorage.setItem('curs', JSON.stringify(curs));
 
-    getTasks();
+    getcurs();
 
 }
